@@ -40,9 +40,8 @@ $errorMessage = 'There was an error while submitting the form. Please try again 
 // if you are not debugging and don't need error reporting, turn this off by error_reporting(0);
 error_reporting(E_ALL & ~E_NOTICE);
 
-try
-{
-    if(count($_POST) == 0) throw new \Exception('Form is empty');
+try {
+    if (count($_POST) == 0) throw new \Exception('Form is empty');
     $emailTextHtml = "<h3>New message from the w3newbie Theme:</h3><hr>";
     $emailTextHtml .= "<table>";
 
@@ -80,13 +79,11 @@ try
     $mail->Body = $emailTextHtml;
     $mail->isHTML(true);
 
-    if(!$mail->send()) {
+    if (!$mail->send()) {
         throw new \Exception('Email send failed. ' . $mail->ErrorInfo);
     }
     $responseArray = array('type' => 'success', 'message' => $okMessage);
-}
-catch (\Exception $e)
-{
+} catch (\Exception $e) {
     // $responseArray = array('type' => 'danger', 'message' => $errorMessage);
     $responseArray = array('type' => 'danger', 'message' => $e->getMessage());
 }
@@ -98,8 +95,7 @@ if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQ
     header('Content-Type: application/json');
 
     echo $encoded;
-}
-// else just display the message
+} // else just display the message
 else {
     echo $responseArray['message'];
 }
