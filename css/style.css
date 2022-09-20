@@ -1,0 +1,299 @@
+/*============= RESET STYLE =============
+
+/*-- iPhone X Remove Gutters
+Ignore W3C Validation error for this style. --*/
+html {
+   padding: env(safe-area-inset);
+   scroll-behavior: auto!important; /*-- Disable Bootstrap 5 Scroll Behavior to control speed in plugins.js --*/
+}
+
+/*-- Body Resets --*/
+body {
+   font-family: 'Lato', sans-serif;
+   color: #505962;
+}
+
+.text-justify { /*-- Class Dropped in Bootstrap 5 --*/
+   text-align: justify;
+}
+
+/*-- Remove Blue Browser Outline Around Buttons in Chrome --*/
+a:focus,
+button:focus {
+  outline: 0 !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+/*-- Pointer Cursor On Links & Buttons --*/
+a, .btn, button {
+   cursor: pointer!important;
+   text-decoration: none;
+}
+
+/*============= NAVIGATION =============*/
+
+.navbar-brand img {
+   height: 2rem;
+}
+.navbar {
+   padding: .6rem 1rem;
+   font-size: .9rem;
+   letter-spacing: .1rem;
+   background-color: rgba(57, 63, 70, .9);
+   font-weight: 700;
+   text-transform: uppercase;
+}
+.navbar-nav li {
+   padding-right: .8rem;
+}
+.navbar-nav .nav-link {
+   padding-top: .8rem;
+   color: white;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+   color: #00b3ff;
+}
+.svg-inline--fa.fa-bars {
+   color: white;
+   font-size: 1.6rem;
+}
+/*-- Remove Button Outline --*/
+button:active, button:focus {
+   outline: 0;
+}
+.navbar-toggler {
+   border: none!important;
+}
+
+/*============= LANDING PAGE =============*/
+
+/*-- Parallax Landing Page Section --*/
+.parallax-home {
+   height: 100vh;
+ }
+
+/*-- Landing Page Content --*/
+.caption {
+   z-index: 1;
+   top: 40%;
+   position: absolute;
+   text-align: center;
+}
+.btn {
+   border-width: medium;
+   padding: .5rem 1.2rem;
+   text-transform: uppercase;
+   border-radius: 0;
+}
+
+/*============= ABOUT SECTION =============*/
+
+/*-- Scrollspy Offset --*/
+.offset:before {
+   content: "";
+   height: 3.875rem;
+   margin-top: -3.875rem;
+   display: block;
+}
+
+.heading {
+   text-transform: uppercase;
+   font-weight: 700;
+}
+.heading-underline {
+   width: 3rem;
+   height: .25rem;
+   background-color: #00b3ff;
+   margin: 1.5rem auto;
+}
+.about .svg-inline--fa {
+   color: #00b3ff;
+}
+
+/*-- Jumbotron Class Dropped in Bootstrap 5 --*/
+.jumbotron {
+   padding: 2rem 1rem;
+   margin-bottom: 2rem;
+   background-color: #e9ecef;
+   border-radius: 0;
+ }
+ @media (min-width: 576px) {
+   .jumbotron {
+     padding: 4rem 2rem;
+   }
+ }
+
+/*============= PORTFOLIO SECTION =============*/
+
+.portfolio-item {
+   overflow: hidden;
+}
+.portfolio-item img {
+   transition: transform .4s ease;
+}
+.portfolio-item img:hover {
+   cursor: zoom-in;
+   transform: scale(1.1);
+}
+.example-image {
+   width: 100%;
+}
+/*-- Prevent Lightbox Scrolling on Mobile --*/
+.lightboxOverlay {
+   max-width: 100%!important;
+}
+
+/*============= TESTIMONIALS SECTION =============*/
+
+.card h5 {
+   color: #00b3ff;
+}
+.card p, .footer p {
+   font-size: 1.1rem;
+}
+
+/*============= CONTACT SECTION =============*/
+
+.footer {
+   background-color: #565b61;
+}
+.footer img {
+   height: 2rem;
+}
+.footer a {
+   color: white;
+   text-decoration: none;
+}
+.footer .svg-inline--fa {
+   font-size: 1.6rem;
+}
+.footer .svg-inline--fa:hover {
+   color: #00b3ff;
+}
+ul.social {
+   display: flex;
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+}
+ul.social li {
+   display: inline;
+   padding-right: 1.2rem;
+}
+
+/*-- Contact Form --*/
+.form-group {
+   margin-bottom: 1.3rem;
+}
+.form-control {
+   background: #53595f;
+   border-radius: 0;
+   border: .15rem solid #666b71;
+   color: white!important;
+   font-size: 1.1rem;
+}
+.form-control:focus {
+   background: #53595f;
+   border: .15rem solid #93979b;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+   color: #b2b5b8;
+}
+.controls input:focus,
+.controls textarea:focus { /*-- Remove Element Outlines in Contact Form --*/
+  outline: 0 !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+.btn-close { /*-- Resize "X" space in success/failure form message --*/
+   width: .5em!important;
+   height: .7em!important;
+   padding: .5em .9em!important;
+}
+
+/*-- Socket --*/
+hr.socket {
+   border-top: .2rem solid #666b71;
+   opacity: 1!important;
+}
+
+/*============= MEDIA QUERIES =============*/
+
+/* Medium (md) devices (tablets, 768px and under) */
+@media (max-width: 767.98px) {
+   .parallax-home {
+      height: 100vh;
+      min-height: 500px;
+    }
+   .caption {
+      top:35%;
+   }
+   .caption h1 {
+      font-size: 1.8rem;
+   }
+}
+
+/*============ BOOTSTRAP BREAK POINTS:
+
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+=============*/
+
+/*============= UNIVERSAL PARALLAX PLUGIN CSS =============*/
+.parallax-container {
+   -webkit-align-items: center;
+   align-items: center;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   -ms-flex-align: center;
+   -webkit-flex-wrap: wrap;
+   -ms-flex-wrap: wrap;
+   flex-wrap: wrap;
+   margin: 0;
+   padding: 15px;
+   position: relative;
+   width: 100%
+}
+.parallax-container .parallax-content {
+   margin: 0 auto;
+   width: 100%;
+}
+.parallax__container {
+   clip: rect(0, auto, auto, 0);
+   height: 100%;
+   left: 0;
+   overflow: hidden;
+   position: absolute;
+   top: 0;
+   width: 100%;
+   z-index: -100
+}
+.parallax__container .parallax {
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   position: fixed;
+   top: 0;
+   -webkit-transform: translate3d(0, 0, 0);
+   transform: translate3d(0, 0, 0);
+   -webkit-transform-style: preserve-3d;
+   transform-style: preserve-3d;
+   width: 100%
+}
