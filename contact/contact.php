@@ -84,7 +84,6 @@ try {
     }
     $responseArray = array('type' => 'success', 'message' => $okMessage);
 } catch (\Exception $e) {
-    // $responseArray = array('type' => 'danger', 'message' => $errorMessage);
     $responseArray = array('type' => 'danger', 'message' => $e->getMessage());
 }
 
@@ -99,4 +98,3 @@ if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQ
 else {
     echo $responseArray['message'];
 }
-?>
